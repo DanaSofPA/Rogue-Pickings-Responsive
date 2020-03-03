@@ -1,4 +1,4 @@
-/*CSS for 206 Coding Responsive Websites Step 6 of 8*/
+/*CSS for 206 Coding Responsive Websites - Flexbox Layouts*/
 
 /*Base Styles*/
 
@@ -6,7 +6,7 @@ html {
 	font-size: 16px;
 }
 
-@font-face{
+@font-face {
 	font-family: 'Wisdom Script';
 	src: url('../fonts/wisdom-script.otf') format('opentype');
 }
@@ -17,14 +17,16 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-size: 1em;
+	width: 90%;
 }
 
-.container{
+.container {
 	max-width: 1200px;
-	margin: 0 auto;
+	width: 90%;
 	display:flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 h1,
@@ -35,23 +37,27 @@ h4 {
 	text-transform: uppercase;
 	font-weight: 700;
 }
+
 h1 {
 	font-size: 1.875em;
 }
+
 h2 {
     font-size: 1.5em;
 }
+
 h3 {
 	font-size: 1.125em;
 }
+
 h4 {
 	font-size: .75em;
 }
 
 p {
-	font-size: 14px;
+	font-size: .875em;
 	line-height: 21px;
-    padding: 0 30px;
+    	/*padding: 0 30px;*/
 }
 
 
@@ -59,38 +65,50 @@ p {
 
 /*The widths are in a percentage!*/
 header {
-	height: 110px;
-	border-bottom: 3px solid #77a466;
-	margin: 0 auto;
+	/*height: 110px;*/
+	/*border-bottom: 3px solid #77a466;*/
 	display:flex;
 	justify-content: center;
 	align-items: center;
+	/*flex-flow: row wrap;*/
+	flex-direction: column;
 }
 
 header h1 {
-	float: left;
 	margin: 0;
-	padding: 38px 0;
+	/*padding: 38px 0;*/
+	border-bottom: 3px solid #77a466;
 }
+
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
-	float: right;
-	padding: 46px 0;
+	/*padding: 46px 0;*/
 }
+
 header nav ul {
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
+
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 14px;
-	padding: 0 10px;
+	padding: 10px 10px;
 	display: inline;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
 }
+
 header nav ul li a{
 	text-decoration: none;
 	color:#77a466;
@@ -102,30 +120,31 @@ header nav ul li a{
 .top-section,
 .bottom-section {
 	margin: 0 auto;
-	clear: both;
 	display:flex;
 	justify-content: center;
 	align-items: center;
+	width: 90%;
+	flex-flow: row wrap;
 }
 
 .main-image {
 	height: auto;
-	float: left;
 }
 .main-image img {
 	width: 100%;
-	border-bottom: 3px solid #77a466;
+	border: 3px solid #77a466;
 }
 
 .main-title {
 	height: auto;
-	float: left;
 }
+
 .main-title h3 {
 	text-align: left;
 	padding: 5px 0;
 	color: #77a466;
 }
+
 .main-title p {
 	padding: 0;
 	font-size: 16px;
@@ -137,14 +156,96 @@ header nav ul li a{
 .section-one,
 .section-two,
 .section-three {
-	width: 33%;
+	/*width: 33%;*/
 	height: auto;
-	float: left;
 	border-top: 1px solid #eee;
 }
 
-.section-one h4 {
+.section-one h4,
+.section-two h4,
+.section-three h4 {
 	padding: 10px 0;
+}
+
+.section-two {
+	/*border-left: 1px solid #eee;*/
+	/*border-right: 1px solid #eee;*/
+}
+
+/*.section-two h4,
+.section-three h4 {
+	padding: 10px 30px;
+}*/
+
+.menu {
+	list-style: none;
+	padding: 0;
+}
+
+.menu li {
+	padding: 10px 0;
+	color:#77a466;
+}
+
+.reviews {
+	color: #333;
+	font-size: 1em;
+	line-height: 21px;
+}
+
+.address {
+	font-size: 1em;
+	line-height: 24px;
+}
+
+/*Footer*/
+
+/*The widths are in a percentage!*/
+footer {
+	/*height: 50px;*/
+	border-top: 3px solid #eee;
+	margin: 0 auto;
+	text-align: center;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	flex-flow: row wrap;
+}
+
+footer span {
+	font-family: 'Wisdom Script', cursive;
+	text-transform: lowercase;
+	color: #77a466;
+	font-size: 14px;
+}
+
+/*Breakpoints*/
+
+/*TABLET*/
+
+@media all and (min-width:768px) {
+
+.bottom-section {
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	/*align-items: center;*/
+	align-items: flex-start;
+	/*width: 90%;*/
+	flex-flow: row;
+}
+
+.section-one,
+.section-two,
+.section-three {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	width: 33%;
+	height: auto;
+	border-top: 1px solid #eee;
 }
 
 .section-two {
@@ -154,45 +255,69 @@ header nav ul li a{
 
 .section-two h4,
 .section-three h4 {
-	padding: 10px 30px;
+	padding: 10px 10px;
 }
 
-.menu {
-	list-style: none;
-	padding: 0;
+.section-two p,
+.section-three p {
+	padding: 0 10px;
 }
-.menu li {
-	padding: 10px 0;
+
+}
+
+/*DESKTOP*/
+
+@media all and (min-width:1200px) {
+
+header {
+	/*height: 110px;*/
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	/*flex-direction: column;*/
+	flex-direction: row;
+	width: 90%;
+}
+
+header h1 {
+	margin: 0;
+	padding: 38px 0;
+	border: none;
+}
+
+header h1 span {
+	color: #77a466;
+}
+
+header nav {
+	padding: 46px 0;
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	/*justify-content: center;*/
+}
+
+header nav ul li {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 14px;
+	padding: 0 10px;
+	display: inline;
+	display: flex;
+	/*justify-content: center;*/
+	/*flex-direction: column;*/
+	flex-direction: row;
+	/*width: 100%;*/
+	/*text-align: center;*/
+}
+
+header nav ul li a{
+	text-decoration: none;
 	color:#77a466;
 }
-
-.reviews {
-	color: #333;
-	font-size: 16px;
-	line-height: 21px;
 }
 
-.address {
-	font-size: 16px;
-	line-height: 24px;
-}
-
-/*Footer*/
-
-/*The widths are in a percentage!*/
-footer {
-	height: 50px;
-	border-top: 3px solid #eee;
-	margin: 0 auto;
-	clear: both;
-	text-align: center;
-	display:flex;
-	justify-content: center;
-	align-items: center;
-}
-footer span {
-	font-family: 'Wisdom Script', cursive;
-	text-transform: lowercase;
-	color: #77a466;
-	font-size: 14px;
-}
