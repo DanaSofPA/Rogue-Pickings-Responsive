@@ -65,18 +65,14 @@ p {
 
 /*The widths are in a percentage!*/
 header {
-	/*height: 110px;*/
-	/*border-bottom: 3px solid #77a466;*/
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	/*flex-flow: row wrap;*/
 	flex-direction: column;
 }
 
 header h1 {
 	margin: 0;
-	/*padding: 38px 0;*/
 	border-bottom: 3px solid #77a466;
 }
 
@@ -84,9 +80,6 @@ header h1 span {
 	color: #77a466;
 }
 
-header nav {
-	/*padding: 46px 0;*/
-}
 
 header nav ul {
 	margin: 0;
@@ -202,7 +195,6 @@ header nav ul li a{
 
 /*The widths are in a percentage!*/
 footer {
-	/*height: 50px;*/
 	border-top: 3px solid #eee;
 	margin: 0 auto;
 	text-align: center;
@@ -230,9 +222,7 @@ footer span {
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
-	/*align-items: center;*/
 	align-items: flex-start;
-	/*width: 90%;*/
 	flex-flow: row;
 }
 
@@ -274,11 +264,9 @@ body {
 }
 
 header {
-	/*height: 110px;*/
 	display:flex;
 	justify-content: space-between;
 	align-items: center;
-	/*flex-direction: column;*/
 	flex-direction: row;
 	width: 90%;
 }
@@ -302,7 +290,6 @@ header nav ul {
 	padding: 0;
 	display: flex;
 	flex-wrap: nowrap;
-	/*justify-content: center;*/
 }
 
 header nav ul li {
@@ -312,11 +299,7 @@ header nav ul li {
 	padding: 0 10px;
 	display: inline;
 	display: flex;
-	/*justify-content: center;*/
-	/*flex-direction: column;*/
 	flex-direction: row;
-	/*width: 100%;*/
-	/*text-align: center;*/
 }
 
 header nav ul li a{
